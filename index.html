@@ -68,6 +68,12 @@
     .result {
       margin-top: 12px;
       font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .result.show {
+      opacity: 1;
     }
   </style>
 </head>
@@ -78,7 +84,6 @@
   <p>Écris ta réponse avant de cliquer sur <b>Vérifier</b>.</p>
 
   <div class="cards-container">
-    <!-- Carte 1 -->
     <div class="card">
       <h4>👉 Que fais-tu si un client s’énerve à l’accueil ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -86,7 +91,6 @@
       <div class="result"></div>
     </div>
 
-    <!-- Carte 2 -->
     <div class="card">
       <h4>👉 Quelle est la première qualité à développer à l’accueil ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -94,7 +98,6 @@
       <div class="result"></div>
     </div>
 
-    <!-- Carte 3 -->
     <div class="card">
       <h4>👉 Comment réagis-tu si tu ne connais pas la réponse à une question ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -102,7 +105,6 @@
       <div class="result"></div>
     </div>
 
-    <!-- Carte 4 -->
     <div class="card">
       <h4>👉 Un visiteur demande à voir le directeur sans rendez-vous. Que fais-tu ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -110,7 +112,6 @@
       <div class="result"></div>
     </div>
 
-    <!-- Carte 5 -->
     <div class="card">
       <h4>👉 Quelle attitude adoptes-tu au téléphone avec un client impatient ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -118,7 +119,6 @@
       <div class="result"></div>
     </div>
 
-    <!-- Carte 6 -->
     <div class="card">
       <h4>👉 Pourquoi le registre visiteur et la fiche message sont-ils importants ?</h4>
       <input type="text" placeholder="Ta réponse ici..." class="answer">
@@ -130,7 +130,7 @@
   <script>
     const solutions = [
       "Rester calme, écouter, montrer de l’empathie et chercher une solution.",
-      "La patience et la courtoisie.",
+      "Le sens de l’écoute et la courtoisie.",
       "Expliquer honnêtement et orienter vers la bonne personne.",
       "Expliquer poliment que ce n’est pas possible et proposer un rendez-vous.",
       "Garder son calme, écouter et rassurer le client.",
@@ -144,6 +144,7 @@
 
         if (input.value.trim() === "") {
           result.innerHTML = `<span style="color:red;">⚠ Merci d’écrire ta réponse avant de valider.</span>`;
+          result.classList.add("show");
         } else {
           result.innerHTML = `
             <p style="color:green; font-weight:bold;">✔ Réponse enregistrée ! Voici la solution :</p>
@@ -151,6 +152,7 @@
               ${solutions[index]}
             </div>
           `;
+          result.classList.add("show");
         }
       });
     });
