@@ -7,139 +7,153 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fa;
-      margin: 0;
-      padding: 20px;
+      margin: 20px;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    h2, h3 {
       text-align: center;
+      color: #1f3c88;
     }
-    h1 {
-      color: #222;
+
+    p {
+      text-align: center;
+      margin-bottom: 20px;
     }
+
     .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      margin-top: 20px;
     }
+
     .card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       padding: 20px;
-      text-align: left;
+      width: 300px;
+      text-align: center;
     }
-    .card p {
-      font-weight: bold;
+
+    .card h4 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .card input {
+      width: 90%;
+      padding: 8px;
       margin-bottom: 10px;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: none;
+      border-radius: 6px;
     }
-    button {
-      margin-top: 10px;
+
+    .card button {
       background: #555;
       color: white;
       border: none;
-      padding: 10px 15px;
+      padding: 8px 15px;
       border-radius: 6px;
       cursor: pointer;
     }
-    button:hover {
+
+    .card button:hover {
       background: #333;
     }
-    .feedback {
-      margin-top: 10px;
-      font-style: italic;
-      font-size: 14px;
-    }
-    .solution {
-      margin-top: 8px;
-      padding: 8px;
-      background: #e8f4ff;
-      border-left: 4px solid #007acc;
-      border-radius: 6px;
-      display: none;
+
+    .result {
+      margin-top: 12px;
       font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Exercice Flashcards — Réponse obligatoire</h1>
+  <h2>Évaluation - Je prends en charges les personnes à l'accueil</h2>
+  <h3>Exercice Flashcards — Réponse obligatoire</h3>
   <p>Écris ta réponse avant de cliquer sur <b>Vérifier</b>.</p>
 
   <div class="cards-container">
-
+    <!-- Carte 1 -->
     <div class="card">
-      <p>👉 Que fais-tu si un client s’énerve à l’accueil ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne attitude : Rester calme, écouter sans interrompre et proposer une solution adaptée.</div>
+      <h4>👉 Que fais-tu si un client s’énerve à l’accueil ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
 
+    <!-- Carte 2 -->
     <div class="card">
-      <p>👉 Quelle est la première qualité à développer à l’accueil ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne réponse : Le sens de l’écoute et la courtoisie.</div>
+      <h4>👉 Quelle est la première qualité à développer à l’accueil ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
 
+    <!-- Carte 3 -->
     <div class="card">
-      <p>👉 Comment réagis-tu si tu ne connais pas la réponse à une question ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne réponse : Expliquer honnêtement et orienter vers la bonne personne.</div>
+      <h4>👉 Comment réagis-tu si tu ne connais pas la réponse à une question ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
 
+    <!-- Carte 4 -->
     <div class="card">
-      <p>👉 Un visiteur demande à voir le directeur sans rendez-vous. Que fais-tu ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne réponse : Expliquer poliment que ce n’est pas possible et proposer un rendez-vous.</div>
+      <h4>👉 Un visiteur demande à voir le directeur sans rendez-vous. Que fais-tu ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
 
+    <!-- Carte 5 -->
     <div class="card">
-      <p>👉 Quelle attitude adoptes-tu au téléphone avec un client impatient ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne réponse : Rester poli, écouter et répondre avec efficacité.</div>
+      <h4>👉 Quelle attitude adoptes-tu au téléphone avec un client impatient ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
 
+    <!-- Carte 6 -->
     <div class="card">
-      <p>👉 Pourquoi le registre visiteur et la fiche message sont-ils importants ?</p>
-      <textarea></textarea>
-      <button onclick="checkAnswer(this)">Vérifier</button>
-      <div class="feedback"></div>
-      <div class="solution">✅ Bonne réponse : Ils assurent la traçabilité et une bonne communication interne.</div>
+      <h4>👉 Pourquoi le registre visiteur et la fiche message sont-ils importants ?</h4>
+      <input type="text" placeholder="Ta réponse ici..." class="answer">
+      <button class="verify">Vérifier</button>
+      <div class="result"></div>
     </div>
-
   </div>
 
   <script>
-    function checkAnswer(button) {
-      const card = button.closest(".card");
-      const textarea = card.querySelector("textarea");
-      const feedback = card.querySelector(".feedback");
-      const solution = card.querySelector(".solution");
+    const solutions = [
+      "Rester calme, écouter, montrer de l’empathie et chercher une solution.",
+      "La patience et la courtoisie.",
+      "Expliquer honnêtement et orienter vers la bonne personne.",
+      "Expliquer poliment que ce n’est pas possible et proposer un rendez-vous.",
+      "Garder son calme, écouter et rassurer le client.",
+      "Ils permettent de garder une trace et d’assurer un suivi professionnel."
+    ];
 
-      if (textarea.value.trim() === "") {
-        feedback.textContent = "⚠️ Merci d’écrire ta réponse avant de valider.";
-        feedback.style.color = "red";
-      } else {
-        feedback.textContent = "✔️ Réponse enregistrée ! Voici la solution :";
-        feedback.style.color = "green";
-        solution.style.display = "block";
-      }
-    }
+    document.querySelectorAll(".verify").forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        const input = btn.previousElementSibling;
+        const result = btn.nextElementSibling;
+
+        if (input.value.trim() === "") {
+          result.innerHTML = `<span style="color:red;">⚠ Merci d’écrire ta réponse avant de valider.</span>`;
+        } else {
+          result.innerHTML = `
+            <p style="color:green; font-weight:bold;">✔ Réponse enregistrée ! Voici la solution :</p>
+            <div style="background:#e6f3ff; padding:8px; border-radius:6px;">
+              ${solutions[index]}
+            </div>
+          `;
+        }
+      });
+    });
   </script>
 
 </body>
